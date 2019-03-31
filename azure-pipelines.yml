@@ -1,0 +1,35 @@
+name: $(Date:yyyMMdd).$(Rev:.r)
+pr:
+- 'master'
+jobs:
+- job: Debug
+  pool: 'Hosted VS2017'
+  steps:
+   - task: MSBuild@1
+     inputs:
+      solution: 'BuildAndTest.proj'
+      configuration: 'Debug'
+
+- job: Release
+  pool: 'Hosted VS2017'
+  steps:
+  - task: MSBuild@1
+    inputs:
+      solution: 'BuildAndTest.proj'
+      configuration: 'Release'
+
+- job: DesktopDebug
+  pool: 'Hosted VS2017'
+  steps:
+  - task: MSBuild@1
+    inputs:
+      solution: 'BuildAndTest.proj'
+      configuration: 'Desktop.Debug'
+
+- job: DesktopRelease
+  pool: 'Hosted VS2017'
+  steps:
+  - task: MSBuild@1
+    inputs:
+      solution: 'BuildAndTest.proj'
+      configuration: 'Desktop.Release'
