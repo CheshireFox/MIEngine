@@ -3,7 +3,7 @@
   <PropertyGroup>
     <!--Fix the assembly version for DebugEngineHost as all the versions of this dll must have the same assembly identity
     NOTE: Ths must be set BEFORE improting miengine.settings.targets-->
-    <AssemblyVersion>1.0.0</AssemblyVersion>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
   </PropertyGroup>
   <!-- miengine.settings.targets must be imported first as it sets $(NuGetPackagesDirectory) -->
   <Import Project="..\..\build\miengine.settings.targets" />
