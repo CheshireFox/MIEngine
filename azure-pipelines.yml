@@ -3,7 +3,7 @@ pr:
 - 'master'
 jobs:
 - job: Debug
-  pool: 'Hosted VS2017'
+  pool: 'windows-2019'
   steps:
    - task: MSBuild@1
      inputs:
@@ -11,7 +11,7 @@ jobs:
       configuration: 'Debug'
 
 - job: Release
-  pool: 'Hosted VS2017'
+  pool: 'windows-2019'
   steps:
   - task: MSBuild@1
     inputs:
@@ -19,7 +19,7 @@ jobs:
       configuration: 'Release'
 
 - job: DesktopDebug
-  pool: 'Hosted VS2017'
+  pool: 'windows-2019'
   steps:
   - task: MSBuild@1
     inputs:
@@ -27,7 +27,7 @@ jobs:
       configuration: 'Desktop.Debug'
 
 - job: DesktopRelease
-  pool: 'Hosted VS2017'
+  pool: 'windows-2019'
   steps:
   - task: MSBuild@1
     inputs:
